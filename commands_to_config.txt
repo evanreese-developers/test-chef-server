@@ -1,0 +1,6 @@
+The following commands were ran on the box once the vagrant up finished to complete
+the installation/configuration of the chef server:
+
+sudo chef-server-ctl reconfigure
+sudo chef-server-ctl user-create [[my_username]] [[my_first_name]] [[my_last_name]] [[my_email]] '[[put_real_password_here]]' --filename ~/.ssh/[[name_my_pem_file]].pem
+sudo chef-server-ctl org-create [[my_org_name]] '[[my_org_name_description]]' --association_user [[my_admin_user]] --filename ~/.ssh/[[my_org_name]]-validator.pem
