@@ -4,3 +4,23 @@ the installation/configuration of the chef server:
 sudo chef-server-ctl reconfigure
 sudo chef-server-ctl user-create [[my_username]] [[my_first_name]] [[my_last_name]] [[my_email]] '[[put_real_password_here]]' --filename ~/.ssh/[[name_my_pem_file]].pem
 sudo chef-server-ctl org-create [[my_org_name]] '[[my_org_name_description]]' --association_user [[my_admin_user]] --filename ~/.ssh/[[my_org_name]]-validator.pem
+
+
+had to run an install command for some packages 
+sudo rpm -Uvh https://packages.chef.io/files/stable/chef-manage/2.5.16/el/7/chef-manage-2.5.16-1.el7.x86_64.rpm
+sudo chef-manage-ctl reconfigure
+sudo chef-server-ctl install chef-manage
+sudo opscode-manage-ctl reconfigure
+sudo chef-manage-ctl reconfigure
+
+iptable config may need to be ran
+
+turn off SELinux
+/etc/selinux/config 
+set to disabled and reboot
+
+use this site to regernerate certs if needed
+https://docs.chef.io/server_security.html
+
+use this site to configure ssl access in chrome
+https://superuser.com/questions/1083766/how-do-i-deal-with-neterr-cert-authority-invalid-in-chrome
